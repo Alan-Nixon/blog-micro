@@ -1,0 +1,78 @@
+/* Bordered form */
+
+body { 
+    overflow-x: hidden;
+}
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+.avatarLogo { 
+    width: 200px;
+    border-radius: 50%;
+}
+
+.formParent { 
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+
+input[type=text],
+input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin-top: 8px;
+    margin-left: 30px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+label {
+    margin-left: 30px;
+    margin-top: 5px;
+}
+.error { 
+    margin-left: 25px;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 30px;
+    border: none;
+    cursor: pointer;
+
+    width: 90%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+ 
+ 
+

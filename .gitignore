@@ -1,0 +1,8 @@
+front-end/node_modules/
+front-end/.env 
+back-end/API_GATEWAY/node_modules/ 
+back-end/API_GATEWAY/.env 
+back-end/blogManagement/node_modules/ 
+back-end/blogManagement/.env y
+back-end/userManagement/node_modules/ 
+back-end/userManagement/.env
