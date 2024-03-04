@@ -10,7 +10,7 @@ function Navbar() {
                         <a className="navbar-brand" href="/">WebSiteName</a>
                     </div>
                     <ul className="nav navbar-nav">
-                        <li style={{ marginLeft: "5px" }}><a href="#home"><span style={{color:"white"}}>Home</span></a></li>
+                        <li style={{ marginLeft: "5px" }}><a href="/"><span style={{color:"white"}}>Home</span></a></li>
                     </ul>
                     <span style={{ color: "white", marginLeft: "30%", fontSize: "25px", marginTop: "10px", fontWeight: "bolder" }}>Hi, Alan</span>
                     <div onClick={Logout} style={{
@@ -18,7 +18,7 @@ function Navbar() {
                         cursor:"pointer"
                     }}>
                         <span style={{ color: "white", marginRight: "10px", marginTop: "-15px" }}><b>LOGOUT</b></span>
-                        <i class="fa fa-sign-out" style={{
+                        <i className="fa fa-sign-out" style={{
                             fontSize: "30px",
                             color: "white",
                             marginTop: "10px"

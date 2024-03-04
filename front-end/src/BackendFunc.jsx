@@ -6,6 +6,7 @@ const axiosRequest = async (Route, postData, token) => {
         return data
     } else {
         try {
+
             const config = {
                 withCredentials: true,
                 headers: { 'Authorization': `${token || ""}` }
@@ -20,10 +21,15 @@ const axiosRequest = async (Route, postData, token) => {
 }
 
 
-const blogAxiosRequest = async (Route, postData) => {
+const blogAxiosRequest = async (Route, postData, token, configData) => {
     try {
         if (postData) {
-            const { data } = await axios.post(`${process.env.REACT_APP_BLOG_URL + Route}`, postData, { withCredentials: true })
+            const config = configData || {
+                withCredentials: true,
+                headers: { 'Authorization': `${token || ""}` }
+            };
+            console.log(postData,config);
+            const { data } = await axios.post(`${process.env.REACT_APP_BLOG_URL + Route}`, postData, config)
             return data
         } else {
             const { data } = await axios.get(`${process.env.REACT_APP_BLOG_URL + Route}`, { withCredentials: true })
@@ -69,4 +75,17 @@ export const fetchBlogData = async () => {
         console.error('Error fetching blog data:', error);
         return [];
     }
+}
+
+export const insertBlogData = async blogData => {
+    const token = localStorage.getItem('token')
+    const config = {
+        withCredentials: true,
+        headers: {
+            'Authorization': `${token || ""}`,
+            'Content-Type': 'multipart/form-data'
+        }
+    };
+    const data = await blogAxiosRequest('addBlog', blogData, false, config)
+    console.log(data, "add blog");
 }

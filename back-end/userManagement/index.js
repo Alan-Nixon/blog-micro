@@ -4,7 +4,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 require('dotenv').config();
 const controller = require('./controller');
-
+const grpc = require('./Grpc')
 
 
 const app = express();

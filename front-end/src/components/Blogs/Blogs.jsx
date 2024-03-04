@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { fetchBlogData } from '../../BackendFunc'
 
 
@@ -9,7 +9,7 @@ function Blogs({ Heading, blog, setBlogs, setAllBlogs }) {
             setBlogs(result)
             setAllBlogs(result)
         })
-    }, [])
+    },[])
     return (
         <div style={{ marginTop: "0px", paddingTop: "51px", paddingLeft: "230px" }}>
             <h1><b>{Heading}</b></h1>

@@ -22,6 +22,10 @@ function SideBar({ setHeading, setBlogs, allBlogs }) {
             <p className={activeCategory === 'technology' ? 'links active' : 'links'} onClick={() => handleClick('technology')}>Technology</p>
             <p className={activeCategory === 'business' ? 'links active' : 'links'} onClick={() => handleClick('business')}>Business</p>
             <p className={activeCategory === 'science' ? 'links active' : 'links'} onClick={() => handleClick('science')}>Science</p>
+
+            <p className={activeCategory === 'science' ? 'links active' : 'links'} onClick={() => window.location.href = '/addBlogs'} style={{ marginTop: "100%" }}> Add your own blog </p>
+            <p className={activeCategory === 'science' ? 'links active' : 'links'} onClick={() => window.location.href = '/logout'}> Logout </p>
+
         </div>
     );
 }
