@@ -1,14 +1,8 @@
 syntax = "proto3";
 
-service POSTSERVICE{
-    rpc CHECKPOSTEXISTS(Token) returns (userId) {}
-    
+service POSTSERVICE {  
+    rpc USERDETAILS(Token) returns (userId) {}
 }
 
-message Token{
-    string  post_id = 1;
-}
-
-message userId{
-    bool  exists = 1;
-}
+message Token { string  userToken = 1; }
+message userId { string userId = 1; }

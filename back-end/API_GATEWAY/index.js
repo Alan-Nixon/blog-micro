@@ -60,26 +60,29 @@ app.get('/blog/:Route', async (req, res) => {
 
 app.post('/blog/:Route', async (req, res) => {
     try {
-        let Data = {};  
+        let Data = {};
         const headers = { withCredentials: true };
 
         if (req.headers['content-type'].includes('multipart/form-data')) {
+            // console.log(req.headers['authorization']);
             const form = new formidable.IncomingForm();
             form.parse(req, async (err, fields, files) => {
-                if (err) {
-                    console.error('Error parsing form data:', err);
-                    return res.status(500).json({ error: 'Error parsing form data' });
-                }
-
-                Data = {
-                    title: fields['title'][0],
-                    category: fields['cate'][0],
-                    content: fields['content'][0],
-                    image: files['image']  
-                };
-
-                console.log("POST CALL TO BLOG SERVICE", Data, headers);
                 try {
+                    if (err) {
+                        console.error('Error parsing form data:', err);
+                        return res.status(500).json({ error: 'Error parsing form data' });
+                    }
+
+                    Data = {
+                        title: fields['title'][0],
+                        category: fields['cate'][0],
+                        content: fields['content'][0],
+                        image: files['image'],
+                        token: req.headers['authorization']
+                    };
+
+                    console.log("POST CALL TO BLOG SERVICE", Data, headers);
+
                     const { data } = await axios.post(`${process.env.BLOGSERVICE + req.params.Route}`, Data, headers);
                     res.json(data);
                 } catch (error) {

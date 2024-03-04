@@ -4,7 +4,7 @@ import { Logout } from '../BackendFunc'
 function Navbar() {
     return (
         <div>
-            <nav className="navbar navbar-inverse" style={{ position: "fixed", width: "100%",height:"35px", zIndex:"2" }}>
+            <nav className="navbar navbar-inverse" style={{ position: "fixed", width: "100%",height:"35px", zIndex:"12" }}>
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <a className="navbar-brand" href="/">WebSiteName</a>

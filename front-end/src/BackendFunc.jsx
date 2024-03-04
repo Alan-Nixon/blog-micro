@@ -27,8 +27,7 @@ const blogAxiosRequest = async (Route, postData, token, configData) => {
             const config = configData || {
                 withCredentials: true,
                 headers: { 'Authorization': `${token || ""}` }
-            };
-            console.log(postData,config);
+            }; 
             const { data } = await axios.post(`${process.env.REACT_APP_BLOG_URL + Route}`, postData, config)
             return data
         } else {
@@ -86,6 +85,7 @@ export const insertBlogData = async blogData => {
             'Content-Type': 'multipart/form-data'
         }
     };
+    blogData.token = token
     const data = await blogAxiosRequest('addBlog', blogData, false, config)
     console.log(data, "add blog");
 }
